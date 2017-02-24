@@ -19,5 +19,29 @@ public class BreedListViewHolder extends RecyclerView.ViewHolder {
         dogImage = (ImageView) itemView.findViewById(R.id.breed_img);
         dogName = (TextView) itemView.findViewById(R.id.breed_name);
         dogDescription = (TextView) itemView.findViewById(R.id.breed_info);
+        
+         itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mClickListener.onItemClick(v, getAdapterPosition());
+
+            }
+        });
+        itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mClickListener.onItemLongClick(v, getAdapterPosition());
+                return true;
+            }
+        });
+
     }
+    private BreedListViewHolder.ClickListener mClickListener;
+
+    //Interface to send callbacks...
+    public interface ClickListener{
+        public void onItemClick(View view, int position);
+        public void onItemLongClick(View view, int position);
+    }
+    
 }
