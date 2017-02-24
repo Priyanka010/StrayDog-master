@@ -17,12 +17,8 @@ import com.manishab.straydogsapp.R;
  */
 public class Breedinfofragment extends Fragment {
     ImageView imageView;
-    TextView dog_name, information, wght, lifespan;
-    String name;
+    TextView dog_name, information;
     String info;
-    TextView hght;
-    String weight;
-    String span;
     int image;
 
 
@@ -42,24 +38,17 @@ public class Breedinfofragment extends Fragment {
         Bundle bundle = getArguments();
         String name = bundle.getString("name");
         String info = bundle.getString("info");
-        String height = bundle.getString("height");
-        String weight = bundle.getString("weight");
-        String span = bundle.getString("span");
         int image = bundle.getInt("image");
 
-        imageView = (ImageView) view.findViewById(R.id.imageView1);
-        dog_name = (TextView) view.findViewById(R.id.name);
-        information = (TextView) view.findViewById(R.id.info1);
-        hght = (TextView) view.findViewById(R.id.height);
-        wght = (TextView) view.findViewById(R.id.weight);
-        lifespan = (TextView) view.findViewById(R.id.lifespan);
+        imageView = (ImageView) view.findViewById(R.id.breed_img);
+        dog_name = (TextView) view.findViewById(R.id.breed_name);
+        information = (TextView) view.findViewById(R.id.breed_info);
+
 
         imageView.setImageResource(image);
         dog_name.setText(name);
         information.setText(info);
-        hght.setText(height);
-        wght.setText(weight);
-        lifespan.setText(span);
+
 
 
         return view;
