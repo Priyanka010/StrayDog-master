@@ -17,5 +17,28 @@ public class CenterViewHolder extends RecyclerView.ViewHolder {
         centerImage = (ImageView) itemView.findViewById(R.id.center_img);
         CenterName = (TextView) itemView.findViewById(R.id.center_name);
         CenterDescription = (TextView) itemView.findViewById(R.id.center_info);
+         itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mClickListener.onItemClick(v, getAdapterPosition());
+
+            }
+        });
+        itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mClickListener.onItemLongClick(v, getAdapterPosition());
+                return true;
+            }
+        });
+
     }
+    private BreedListViewHolder.ClickListener mClickListener;
+
+    //Interface to send callbacks...
+    public interface ClickListener{
+        public void onItemClick(View view, int position);
+        public void onItemLongClick(View view, int position);
+    }
+    
 }
