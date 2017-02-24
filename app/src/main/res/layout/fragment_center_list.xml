@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.manishab.straydogsapp.fragment.CenterFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/center_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="false"
+        android:textStyle="bold"
+
+
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/center_img"
+        android:src="@android:drawable/ic_menu_rotate"
+        />
+
+    <TextView
+        android:textAlignment="viewStart"
+        android:id="@+id/center_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="info"
+        android:textSize="20sp"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="false"
+
+        />
+
+</FrameLayout>

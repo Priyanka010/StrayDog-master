@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "396123762247",
+    "firebase_url": "https://straydogsapp.firebaseio.com",
+    "project_id": "straydogsapp",
+    "storage_bucket": "straydogsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396123762247:android:5516ceb25a20631e",
+        "android_client_info": {
+          "package_name": "com.manishab.straydogsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396123762247-p7rfd44a87hmr9cu0k7lgj75c3qmd2mj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manishab.straydogsapp",
+            "certificate_hash": "9cebd3d855e5d7637e54f0dc549d3a0514b7216e"
+          }
+        },
+        {
+          "client_id": "396123762247-s4ocl8jp3nv3gtq3d3c9lbmsf72ldh7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9_5W5ryTtMiBvhbmT4Mcwz5g4S-8NP0w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396123762247-s4ocl8jp3nv3gtq3d3c9lbmsf72ldh7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
