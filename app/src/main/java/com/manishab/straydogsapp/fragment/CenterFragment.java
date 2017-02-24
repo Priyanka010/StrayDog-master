@@ -19,7 +19,7 @@ import com.manishab.straydogsapp.viewholder.CenterViewHolder;
 import com.squareup.picasso.Picasso;
 
 
-public class CenterFragment extends Fragment {
+public class CenterFragment extends Fragment{
 
     RecyclerView rvCenter;
 
@@ -37,15 +37,33 @@ public class CenterFragment extends Fragment {
         rvCenter.setHasFixedSize(true);
         rvCenter.setAdapter(new FirebaseRecyclerAdapter<Center, CenterViewHolder>(
                 Center.class, R.layout.item_center, CenterViewHolder.class, myRef) {
-            @Override
-            public void populateViewHolder(CenterViewHolder holder, Center center, int position) {
-                Picasso.with(holder.itemView.getContext()).load(center.getCenter_img()).into(holder.centerImage);
-                holder.CenterDescription.setText(center.getCenter_info());
-                holder.CenterName.setText(center.getCenter_name());
-            }
-        });
-        return root;
+                                @Override
+                                public void populateViewHolder(CenterViewHolder holder, Center center, int position) {
+                                    Picasso.with(holder.itemView.getContext()).load(center.getCenter_img()).into(holder.centerImage);
+                                    holder.CenterDescription.setText(center.getCenter_info());
+                                    holder.CenterName.setText(center.getCenter_name());
+                                }
+
+                                @Override
+                                public CenterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                                    CenterViewHolder Holder = super.onCreateViewHolder(parent, viewType);
+                                    Holder.setOnClickListener(new CenterViewHolder.ClickListener() {
+                                        @Override
+                                        public void onItemClick(View view, int position) {
+                                            Toast.makeText(getActivity(), "Item clicked at " + position, Toast.LENGTH_SHORT).show();
+                                        }
+
+                                        @Override
+                                        public void onItemLongClick(View view, int position) {
+                                            Toast.makeText(getActivity(), "Item long clicked at " + position, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+                                    return Holder;
+                                }
+                            });
     }
+}
 
     //    myRef.addChildEventListener(new ChildEventListener() {
 //        @Override
