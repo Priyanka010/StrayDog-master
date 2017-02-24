@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 public class BreedFragment extends Fragment {
     RecyclerView rvBreed;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_breed_list, container, false);
@@ -38,10 +39,23 @@ public class BreedFragment extends Fragment {
                 holder.dogDescription.setText(breed.getBreed_info());
                 holder.dogName.setText(breed.getBreed_name());
             }
+            @Override
+            public BreedListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+               BreedListViewHolder Holder = super.onCreateViewHolder(parent, viewType);
+                Holder.setOnClickListener(new BreedListViewHolder.ClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Toast.makeText(getActivity(), "Item clicked at " + position, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onItemLongClick(View view, int position) {
+                        Toast.makeText(getActivity(), "Item long clicked at " + position, Toast.LENGTH_SHORT).show();
+                    }
         });
 
-        return root;
+        return Holder;
+    }
+});
     }
 }
-
-
