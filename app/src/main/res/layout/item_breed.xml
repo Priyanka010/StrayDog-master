@@ -7,7 +7,7 @@
     android:padding="4dp">
 
     <ImageView
-        android:id="@+id/img_dog"
+        android:id="@+id/breed_img"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         tools:src="@drawable/cockerspaniel"
@@ -21,14 +21,14 @@
         android:orientation="vertical"
         android:padding="8dp">
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/breed_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             style="@style/TextAppearance.AppCompat.Title"
             tools:text="Cocker Spaniel" />
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/breed_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="1"
